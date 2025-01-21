@@ -39,7 +39,7 @@ profiles:
     url: https://www.linkedin.com/in/chi-kit-lee-593634341/
 
 interests:
-  - Data Structures and Algorithms (DSA)
+  - Data Structures and Algorithms
   - Software Engineering
   - Full-Stack Development
   - Problem Solving
@@ -51,7 +51,7 @@ education:
     date_end: 2026-11-17
     summary: |
       Major: Advanced computer science
-      GPA: 3.75/4.0
+      - GPA: 3.75/4.0
       - Transfered from Swinburne University of Technology with 11/12 units credited.
       - Completed projects involving full-stack development and software engineering.
       - Participated in coding competitions.
@@ -61,7 +61,7 @@ education:
     date_end: 2024-07-22
     summary: |
       Major: Artificial Intelligence
-      GPA: 3.58/4.0
+      - GPA: 3.58/4.0
       - Awarded partial scholarship
       - Completed projects involving Algorithms and OOP
 
@@ -96,7 +96,7 @@ languages:
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
-  - title: Ravi's Study Program
+  - title: Ravi's Study Program Graduate
     url: https://www.linkedin.com/company/ravis-study-program/?originalSubdomain=au
     date: 2024-11-18
     awarder: Ravi's Study Program
