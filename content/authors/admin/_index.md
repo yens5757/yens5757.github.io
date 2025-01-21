@@ -98,13 +98,13 @@ languages:
 awards:
   - title: Ravi's Study Program
     url: https://www.linkedin.com/company/ravis-study-program/?originalSubdomain=au
-    date: '2025'
+    date: 2024-11-18
     awarder: Ravi's Study Program
     summary: |
       I completed an intensive program focusing on algorithms, data structures, and coding efficiency. As well as gained insights into industry best practices by networking with professionals from Big Tech companies, learning about their technical expertise, problem-solving approaches, and career paths.
   - title: Complete C# Unity Game Developer 2D & 3D
     url: https://www.udemy.com/course/unitycourse/
-    date: '2022'
+    date: 2022-10-23
     awarder: udemy
     summary: |
       Learned Unity and C# while mastering foundational programming concepts like object-oriented programming (OOP), event-driven design, singleton and factory design pattern.
