@@ -47,8 +47,8 @@ interests:
 education:
   - area: Bachelor of Computer Science
     institution: Monash University 
-    date_start: '2024'
-    date_end: 'Expected 2026'
+    date_start: 2024-07-22
+    date_end: 2026-11-17
     summary: |
       Major: Advanced computer science
       GPA: 3.75/4.0
@@ -57,8 +57,8 @@ education:
       - Participated in coding competitions.
   - area: Bachelor of Computer Science
     institution: Swinburne University of Technology
-    date_start: '2023'
-    date_end: '2024'
+    date_start: 2023-02-28
+    date_end: 2024-07-22
     summary: |
       Major: Artificial Intelligence
       GPA: 3.58/4.0
