@@ -3,7 +3,7 @@
 title: Lee Chi Kit
 
 # Name pronunciation (optional)
-name_pronunciation: Aiken Lee
+name_pronunciation: ''
 
 # Full name (for SEO)
 first_name: Chi Kit
@@ -107,7 +107,7 @@ awards:
     date: 2022-10-23
     awarder: udemy
     summary: |
-      Learned Unity and C# while mastering foundational programming concepts like object-oriented programming (OOP), event-driven design, singleton and factory design pattern.
+      Learned Unity and C# while understanding foundational programming concepts like object-oriented programming (OOP), event-driven design, singleton and factory design pattern.
 ---
 
 ## About Me
