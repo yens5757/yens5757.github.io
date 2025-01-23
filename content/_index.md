@@ -35,9 +35,9 @@ sections:
       title: '📚 My Story'
       subtitle: ''
       text: |-
-        I'm an international student from Hong Kong, passionate about learning and growing. I graduated from high school in 2020 and worked a bunch of different jobs to save up for my dream of studying in Australia. I started my journey at Swinburne University with a scholarship, but after a year and a half, I transferred to Monash University for more opportunities and to challenge myself. 
+        I'm an international student from Hong Kong. After I graduated from high school, I've worked a bunch of different jobs to save up for my dream of studying in Australia. I started my journey at Swinburne University with a scholarship, but after a year and a half, I transferred to Monash University for more opportunities and to challenge myself. 
 
-        Along the way, I’ve learned a lot—working in food services and office jobs taught me how to adapt, work hard, and collaborate with others. These experiences shaped who I am today and inspire me in both my studies and side projects.
+        Along the way, I’ve learned a lot—working in different jobs, studying in university, and doing my personal projects. These different experiences shaped who I am today.
     design:
       columns: '1'
   - block: cta-card
