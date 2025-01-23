@@ -85,11 +85,8 @@ skills:
 
 languages:
   - name: English
-    percent: 100
   - name: Cantonese
-    percent: 100
   - name: Mandarin
-    percent: 100
 
 # Awards.
 #   Add/remove as many awards below as you like.
