@@ -1,7 +1,7 @@
 ---
 title: Redis
 date: 2025-01-19
-external_link: https://github.com/yens5757/redis-python/tree/master
+external_link: https://github.com/yens5757/redis-python
 tags:
   - Python
   - asyncio
