@@ -112,4 +112,4 @@ awards:
 
 ## About Me
 
-Lee Chi Kit is a Computer Science student at Monash University with a passion for problem-solving, algorithms, and software development. He enjoys working on diverse side projects, including full-stack web development, mini-games, in-memory storage systems inspired by tools like Redis. He actively engages in learning and self-improvement through study programs and personal projects, reflecting his dedication to mastering new technologies and solving challenging problems.
+I'm a Computer Science student at Monash University with a passion for problem-solving, algorithms, and software development. I enjoy working on diverse side projects, including full-stack web development, mini-games, in-memory storage systems inspired by tools like Redis, etc. Outside of projects and uni, I would engages in learning and self-improvement through study programs and personal projects, mastering new technologies and solving challenging problems.
