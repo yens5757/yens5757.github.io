@@ -75,9 +75,13 @@ skills:
         percent: 100
         icon: code-bracket
       - name: Web Development
-        description: 'HTML, CSS, Express.js, TypeScript, Mongoose'
+        description: 'HTML, CSS, Express.js, TypeScript'
         percent: 40
         icon: code-bracket
+      - name: Database
+        description: 'MongoDB, Oracle RDBMS'
+        percent: 40
+        icon: code-bracket 
       - name: Game Development
         description: 'Unity'
         percent: 10
