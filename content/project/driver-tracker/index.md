@@ -1,7 +1,7 @@
 ---
 title: Driver Tracker
 date: 2024-09-15
-external_link: https://github.com/yens5757/full-stack-drivers-packages
+external_link: https://github.com/yens5757/driver-tracker
 tags:
   - Angular
   - Mongoose
