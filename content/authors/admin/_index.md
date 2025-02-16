@@ -53,8 +53,8 @@ education:
       Major: Advanced computer science
       - GPA: 3.75/4.0
       - Transfered from Swinburne University of Technology with 11/12 units credited.
-      - Completed projects involving full-stack development and software engineering.
-      - Participated in coding competitions.
+      - Participated in Monash Algorithms & Problem Solving Club.
+      - Relevant Coursework: Data Structures & Algorithms, Relational Database, Web Development
   - area: Bachelor of Computer Science
     institution: Swinburne University of Technology
     date_start: 2023-02-28
@@ -62,8 +62,8 @@ education:
     summary: |
       Major: Artificial Intelligence
       - GPA: 3.58/4.0
-      - Awarded partial scholarship
-      - Completed projects involving Algorithms and OOP
+      - Awarded Swinburne International Excellence Scholarship
+      - Relevant Coursework: Object-Oriented Programming, Cloud Computing, Networking & Systems, Intro to Artificial Intelligence
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
@@ -71,15 +71,15 @@ skills:
   - name: Technical Skills
     items:
       - name: Programming Languages
-        description: 'Python, C#, Ruby'
+        description: 'Python, C#, Ruby, JavaScript'
         percent: 100
         icon: code-bracket
       - name: Web Development
-        description: 'HTML, CSS, Express.js, TypeScript'
+        description: 'HTML, CSS, Express.js, Angular, Bootstrap'
         percent: 40
         icon: code-bracket
       - name: Database
-        description: 'MongoDB, Oracle RDBMS'
+        description: 'MongoDB, Oracle RDBMS, SQL'
         percent: 40
         icon: code-bracket 
       - name: Game Development
@@ -116,4 +116,4 @@ awards:
 
 ## About Me
 
-I'm a Computer Science student at Monash University with a passion for problem-solving, algorithms, and software development. I enjoy working on diverse side projects, including full-stack web development, mini-games, in-memory storage systems inspired by tools like Redis, etc. Outside of projects and uni, I would engages in learning and self-improvement through study programs and personal projects, mastering new technologies and solving challenging problems.
+I'm a Computer Science student at Monash University with a passion for problem-solving, algorithms, and software development. I enjoy working on diverse side projects, including full-stack web development, mini-games, in-memory storage systems, etc. Outside of projects and uni, I would engages in learning and self-improvement through study programs, personal projects, as well as competitive programming, mastering new technologies and solving challenging problems.
