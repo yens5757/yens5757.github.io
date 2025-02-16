@@ -1,12 +1,12 @@
 ---
 # Display name
-title: Lee Chi Kit (Aiken)
+title: Aiken Lee
 
 # Name pronunciation (optional)
 name_pronunciation: ''
 
 # Full name (for SEO)
-first_name: Chi Kit (Aiken)
+first_name: Aiken
 last_name: Lee
 
 # Status emoji
