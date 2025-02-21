@@ -9,6 +9,6 @@ tags:
   - HTML & CSS
 ---
 
-A full stack website with CRUD APIs endpoints and MongoDB database. Used Socket.io for real-time, bidirectional communication between frontend and backend. Integrated third-party APIs, including Google Translate and generative AI, to enhance functionality.
+A full stack website with RESTful APIs endpoints and MongoDB database. Used Socket.io for real-time, bidirectional communication between frontend and backend. Integrated third-party APIs, including Google Translate and generative AI, to enhance functionality.
 
 <!--more-->
