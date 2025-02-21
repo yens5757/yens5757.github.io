@@ -1,6 +1,6 @@
 ---
 title: Algo Visualizer
-date: 2023-09-07
+date: 2023-10-26
 external_link: https://github.com/yens5757/algo-visualizer
 tags:
   - python

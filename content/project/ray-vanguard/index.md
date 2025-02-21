@@ -1,6 +1,6 @@
 ---
 title: Ray Vanguard
-date: 2023-10-26
+date: 2024-06-14
 external_link: https://github.com/yens5757/ray-vanguard
 tags:
   - C#
