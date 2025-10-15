@@ -18,6 +18,9 @@ sections:
       button:
         text: Download CV
         url: uploads/resume.pdf
+      button:
+        text: Download Chinese CV
+        url: uploads/chinese.pdf
     design:
       css_class: dark
       background:
@@ -35,9 +38,9 @@ sections:
       title: '📚 My Story'
       subtitle: ''
       text: |-
-        I'm an international student from Hong Kong. After I graduated from high school, I've worked a bunch of different jobs to save up for my dream of studying in Australia. I started my journey at Swinburne University with a scholarship, but after a year and a half, I transferred to Monash University for more opportunities and to challenge myself. 
+        I'm an international student from Hong Kong. I started my journey at Swinburne University with a scholarship, but after a year and a half, I transferred to Monash University for more opportunities and to challenge myself. 
 
-        Along the way, I’ve learned a lot—working in different jobs, studying in university, and doing my personal projects. These different experiences shaped who I am today.
+        Along the way, I’ve learned a lot from competitions, studying in university, doing my personal projects and in student teams. These different experiences shaped who I am today.
     design:
       columns: '1'
   - block: cta-card

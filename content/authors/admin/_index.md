@@ -51,7 +51,7 @@ education:
     date_end: 2026-11-17
     summary: |
       Major: Advanced computer science
-      - GPA: 3.75/4.0
+      - GPA: 3.8/4.0
       - Transfered from Swinburne University of Technology with 11/12 units credited.
       - Participated in Monash Algorithms & Problem Solving Club.
       - Relevant Coursework: Data Structures & Algorithms, Relational Database, Web Development
@@ -116,4 +116,4 @@ awards:
 
 ## About Me
 
-I'm a Computer Science student at Monash University with a passion for problem-solving, algorithms, and software development. I enjoy working on diverse side projects, including full-stack web development, mini-games, in-memory storage systems, etc. Outside of projects and uni, I would engages in learning and self-improvement through study programs, personal projects, as well as competitive programming, mastering new technologies and solving challenging problems.
+I'm a Computer Science student at Monash University with a passion for problem-solving, algorithms, and software development. I enjoy working on diverse side projects, including full-stack web development, mini-games, in-memory storage systems, etc. Outside of projects and uni, I would engages in learning and self-improvement through study programs, personal projects, competitive programming and student teams, mastering new technologies and solving challenging problems.
