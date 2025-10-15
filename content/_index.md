@@ -18,9 +18,6 @@ sections:
       button:
         text: Download CV
         url: uploads/resume.pdf
-      button:
-        text: Download Chinese CV
-        url: uploads/chinese.pdf
     design:
       css_class: dark
       background:
