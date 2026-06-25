@@ -1,0 +1,57 @@
+/* ============================================================
+   layout.css — page structure, grid, responsive behavior
+   ============================================================ */
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  background:
+    radial-gradient(900px 500px at 78% -8%, rgba(91,157,255,.10), transparent 60%),
+    radial-gradient(700px 500px at 0% 100%, rgba(183,140,255,.08), transparent 55%),
+    var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+a{ color:inherit; text-decoration:none; }
+::selection{ background:rgba(90,209,230,.25); }
+
+.shell{
+  max-width:1180px; margin:0 auto; padding:0 22px;
+  display:grid; grid-template-columns:300px 1fr; gap:40px;
+}
+
+/* identity rail */
+.rail{ position:sticky; top:0; align-self:start; padding:48px 0 40px; }
+.name{ font-family:var(--display); font-weight:700; font-size:40px; letter-spacing:-.02em; line-height:1.05; margin-bottom:10px; }
+.name .dot{ color:var(--accent); }
+.role{ color:var(--text-dim); font-size:15px; margin-bottom:6px; }
+.blurb{ color:var(--text-faint); font-size:13.5px; line-height:1.65; margin:14px 0 26px; }
+.cta-group{ display:flex; flex-direction:column; gap:10px; margin-bottom:30px; }
+.filters{ border-top:1px solid var(--line-soft); padding-top:20px; }
+.filters .lbl{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-faint); margin-bottom:12px; }
+
+/* feed */
+.feed{ padding:48px 0 110px; }
+.feed-head{ display:flex; align-items:baseline; gap:12px; margin-bottom:6px; }
+.feed-head h1{ font-family:var(--display); font-weight:600; font-size:20px; letter-spacing:-.01em; }
+.feed-head .sub{ color:var(--text-faint); font-family:var(--mono); font-size:12.5px; }
+.feed-rule{ height:1px; background:var(--line-soft); margin:18px 0 8px; }
+
+@media (max-width:880px){
+  .shell{ grid-template-columns:1fr; gap:24px; }
+  .rail{ position:static; padding-bottom:8px; }
+  .name{ font-size:34px; }
+}
+
+@media (max-width:520px){
+  .shell{ padding:0 16px; gap:16px; }
+  .rail{ padding:34px 0 4px; }
+  .name{ font-size:29px; }
+  .feed{ padding:28px 0 96px; }
+}
+
+/* gentle entrance for the identity rail on load */
+.rail{ animation:rail-in .6s var(--ease) both; }
+@keyframes rail-in{ from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:none; } }

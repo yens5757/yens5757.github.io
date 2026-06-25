@@ -1,0 +1,38 @@
+/* ============================================================
+   theme.css — design tokens. Edit here to reskin everything.
+   ============================================================ */
+:root{
+  /* surfaces */
+  --bg:#0a0e1a;
+  --bg-soft:#0f1422;
+  --panel:#141a28;
+  --panel-2:#1a2132;
+  --line:#232b3d;
+  --line-soft:#1b2230;
+
+  /* text */
+  --text:#eef2fb;
+  --text-dim:#9aa6c0;
+  --text-faint:#7c89a6;
+
+  /* accent + diff */
+  --accent:#5ad1e6;
+  --add:#54e08a;
+  --del:#ff6b6b;
+
+  /* branch jewel tones (keys must match data/commits.js) */
+  --school:#b78cff;
+  --work:#5b9dff;
+  --projects:#4fd98a;
+  --learning:#f3a14b;
+  --student:#ff7eb6;
+
+  /* type */
+  --display:"Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --sans:ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* motion */
+  --ease:cubic-bezier(.4,0,.2,1);
+  --stagger:70ms;
+}

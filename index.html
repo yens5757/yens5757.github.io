@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aiken Lee — git log of a life</title>
+  <meta name="description" content="Aiken Lee — software engineer, ex-Culture Amp. A portfolio told as a git history: school, work, projects and teams as commits." />
+  <meta name="author" content="Aiken Lee" />
+  <meta name="theme-color" content="#0a0e1a" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- social share cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Aiken Lee — git log of a life" />
+  <meta property="og:description" content="A software-engineering portfolio told as a git history." />
+  <meta property="og:url" content="https://yens5757.github.io" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Aiken Lee — git log of a life" />
+  <meta name="twitter:description" content="A software-engineering portfolio told as a git history." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail" id="rail">
+      <div class="name" id="r-name"></div>
+      <div class="role" id="r-role"></div>
+      <div class="blurb" id="r-blurb"></div>
+      <div class="cta-group" id="ctas"></div>
+      <nav class="filters" aria-label="Filter by branch">
+        <div class="lbl">branches</div>
+        <div id="chips"></div>
+      </nav>
+    </aside>
+
+    <main class="feed">
+      <div class="feed-head">
+        <h1>git log</h1>
+        <span class="sub">--all --graph</span>
+      </div>
+      <div class="feed-rule"></div>
+      <div id="feed"></div>
+    </main>
+  </div>
+
+  <button class="term-toggle" id="termToggle" aria-label="Open terminal">
+    <span class="dotg"></span> open terminal
+  </button>
+
+  <section class="drawer" id="drawer" aria-label="Interactive terminal" aria-hidden="true">
+    <div class="drawer-bar">
+      <span class="tl" style="background:#ff6b6b"></span>
+      <span class="tl" style="background:#ffd166"></span>
+      <span class="tl" style="background:#54e08a"></span>
+      <span class="drawer-title">aiken@portfolio — zsh</span>
+      <button class="x" id="termClose">esc to close ✕</button>
+    </div>
+    <div class="term-body" id="term"></div>
+    <div class="term-form">
+      <span class="ps">~ ❯</span>
+      <input id="cmd" autocomplete="off" spellcheck="false" placeholder="try: help" aria-label="Terminal command input" />
+    </div>
+  </section>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
