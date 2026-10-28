@@ -108,7 +108,7 @@ export const TEAMS: Entry[] = [
 
 export const PROJECTS: Project[] = [
   {
-    name: 'Order Flow Watch', kicker: 'Featured · Oct 2026', icon: 'chart', featured: true,
+    name: 'Order Flow Watch', kicker: 'Data pipeline · Oct 2026', icon: 'chart', featured: true,
     summary:
       'Do retail brokers that get paid for routing customer orders give those customers worse prices? ' +
       'An automated pipeline that collects new SEC Rule 605 and 606 disclosures every week, analyses ' +
