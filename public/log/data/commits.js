@@ -36,7 +36,7 @@ export const COMMITS = [
     add: ["2D arcade space shooter with an upgrade shop", "C# · SplashKit"],
     del: [], url: "https://github.com/yens5757/ray-vanguard" },
 
-  { branch: "school",   hash: "a01f3e2", date: "Jul 2024", ongoing: true, msg: "Transferred to CS @ Monash",
+  { branch: "school",   hash: "a01f3e2", date: "Jun 2024", ongoing: true, msg: "Transferred to CS @ Monash",
     add: ["GPA 3.5 / 4.0", "major: Advanced Computer Science"], del: ["Swinburne"] },
 
   { branch: "projects", hash: "7d2b9c4", date: "Nov 2024", msg: "Driver Tracker",
@@ -57,11 +57,11 @@ export const COMMITS = [
   { branch: "student",  hash: "e4d7a91", date: "Jul 2025", end: "Nov 2025", msg: "Education Officer @ Monash Assistive Tech",
     add: ["taught programming + Unity workshops", "reached kids from disadvantaged backgrounds"], del: [] },
 
-  { branch: "student",  hash: "5a1d8f9", date: "Aug 2025", ongoing: true, msg: "Software team @ Monash Nova Rover",
+  { branch: "student",  hash: "5a1d8f9", date: "Aug 2025", end: "Jul 2026", msg: "Software team @ Monash Nova Rover",
     add: ["extended the GUI in TypeScript + React", "camera config management feature", "Gazebo → Unity sim migration (C#)"],
     del: [] },
 
-  { branch: "student",  hash: "f44a1b8", date: "Oct 2025", end: "Mar 2026", msg: "Software Developer @ Connect3",
+  { branch: "work",     hash: "f44a1b8", date: "Oct 2025", end: "Mar 2026", msg: "Software Developer @ Connect3",
     add: ["Next.js + TypeScript, Tailwind, shadcn/ui", "Supabase Postgres + pgvector", "OpenAI-embedding semantic search"],
     del: [] },
 
@@ -69,17 +69,25 @@ export const COMMITS = [
     add: ["migrated React components across repos", "fixed a script-injection vuln", "untangled Tailwind layering conflicts"],
     del: [] },
 
-  { branch: "student",  hash: "9c1e7a2", date: "Mar 2026", ongoing: true, msg: "ML team member @ DeepNeuron",
+  { branch: "student",  hash: "9c1e7a2", date: "Mar 2026", end: "Aug 2026", msg: "ML team member @ DeepNeuron",
     add: ["rebuilt the fingerspelling model", "97.4% validation accuracy"], del: ["the old fingerspelling model"] },
 
   { branch: "projects", hash: "1f6b0ad", date: "Jun 2026", msg: "Med Track",
     add: ["Medication tracker with patient + clinician roles", "Kotlin · Jetpack Compose · Room · Retrofit · Gemini"],
     del: [], url: "https://github.com/yens5757/MedTrack" },
 
+  { branch: "projects", hash: "6b2f0e4", date: "Aug 2026", ongoing: true, msg: "TaskFlow",
+    add: ["Event + task dashboard for Monash Squash Club, integrating the Humanitix API with PostgreSQL",
+          "Led a team of 5; cut page load times ~85%", "Next.js · TypeScript · PostgreSQL · Drizzle"],
+    del: [], url: "https://gitlab.com/jguu0036/fit3162-event-planner" },
+
   { branch: "projects", hash: "d4e91c7", date: "Oct 2026", msg: "Order Flow Watch",
     add: ["Do brokers paid for order flow give worse fills? Joins SEC Rule 605 + 606 disclosures",
           "Weekly automated pipeline: Python · DuckDB/SQL · React + TypeScript · GitHub Actions"],
     del: [], url: "https://yens5757.github.io/order-flow-watch/" },
+
+  { branch: "work",     hash: "a7c3d58", date: "Nov 2026", end: "Feb 2027", msg: "Incoming Strategy and Product Intern @ Jane Street",
+    add: ["Hong Kong"], del: [] },
 
   { branch: "main",    hash: "HEAD",    date: "Dec 2026", msg: "Graduating",
     add: ["open for grad role"], del: [] },

@@ -11,14 +11,19 @@ import { IconComponent } from './icon.component';
   template: `
     <div class="head">
       <div>
-        <h4>{{ e().title }}</h4>
-        <p class="org">{{ e().org }}</p>
+        <h4>{{ e().title }}@if (e().upcoming) {<span class="soon">Incoming</span>}</h4>
+        <p class="org">
+          @if (e().url; as url) { <a [href]="url" target="_blank" rel="noopener">{{ e().org }}</a> } @else { {{ e().org }} }
+          @if (e().where; as where) { <span class="where"> · {{ where }}</span> }
+        </p>
       </div>
       <p class="when" [class.now]="e().current">{{ e().when }}</p>
     </div>
-    <ul class="points">
-      @for (p of e().points; track p) { <li>{{ p }}</li> }
-    </ul>
+    @if (e().points.length) {
+      <ul class="points">
+        @for (p of e().points; track p) { <li>{{ p }}</li> }
+      </ul>
+    }
     @if (e().tags; as tags) {
       <ul class="tags">@for (t of tags; track t) { <li>{{ t }}</li> }</ul>
     }
@@ -27,6 +32,11 @@ import { IconComponent } from './icon.component';
     :host{ display:block; position:relative; }
     .head{ display:flex; justify-content:space-between; gap:16px; align-items:flex-start; }
     .org{ color:var(--accent); font-weight:500; font-size:15px; }
+    .where{ color:var(--muted); font-weight:400; }
+    .soon{
+      display:inline-block; margin-left:10px; padding:2px 9px; border-radius:999px; vertical-align:2px;
+      background:var(--grad); color:#fff; font-size:11.5px; font-weight:600; letter-spacing:.03em;
+    }
     .when{ color:var(--muted); font-size:14px; white-space:nowrap; padding-top:2px; }
     .when.now{ color:var(--ok); font-weight:500; }
     .points{ list-style:disc; padding-left:20px; margin-top:12px; color:var(--ink-2); font-size:15px; }

@@ -8,8 +8,11 @@ export interface Entry {
   org: string;
   when: string;
   points: string[];
+  where?: string;
+  url?: string;
   tags?: string[];
   current?: boolean;
+  upcoming?: boolean;
 }
 
 export interface Project {
@@ -28,9 +31,9 @@ export const PROFILE = {
   title: 'Software Engineer · Computer Science at Monash University',
   status: 'Open to graduate software engineering roles',
   lead:
-    "Final-year Computer Science student (Advanced Computer Science major) graduating in December 2026. " +
-    "I've shipped frontend and security fixes as a software engineering intern at Culture Amp, built " +
-    'full-stack and machine-learning features in student teams, and I enjoy projects that turn messy ' +
+    'Final-year Computer Science student at Monash University, graduating in December 2026. ' +
+    'Incoming Strategy and Product Intern at Jane Street in Hong Kong, and previously a Software Engineer ' +
+    'Intern at Culture Amp. I build full-stack products and data pipelines, and I enjoy turning messy ' +
     'real-world data into something people can use.',
   facts: [
     { icon: 'pin' as IconName, text: 'Melbourne, Australia' },
@@ -46,16 +49,29 @@ export const PROFILE = {
 
 export const WORK: Entry[] = [
   {
-    title: 'Software Engineer Intern', org: 'Culture Amp', when: 'Nov 2025 – Feb 2026',
+    title: 'Strategy and Product Intern', org: 'Jane Street', where: 'Hong Kong',
+    when: 'Nov 2026 – Feb 2027', upcoming: true, points: [],
+  },
+  {
+    title: 'Software Engineer Intern', org: 'Culture Amp', where: 'Melbourne', when: 'Nov 2025 – Feb 2026',
     points: [
-      'Migrated React components across repositories.',
-      'Found and fixed a script-injection security vulnerability.',
-      'Resolved Tailwind CSS layering conflicts.',
+      'Migrated internal React components across unmaintained repos, coordinating visual changes with designers.',
+      'Resolved dependency and Tailwind layering conflicts to improve build stability and fix styling issues.',
+      'Identified and resolved production issues, including data duplication and a potential script-injection vulnerability.',
+      'Reworked non-standard code to company standards to improve maintainability and consistency.',
     ],
     tags: ['React', 'Tailwind CSS', 'Web security'],
   },
   {
-    title: 'Programming Bootcamp Tutor', org: 'Monash University', when: 'Jul 2025',
+    title: 'Software Developer', org: 'Connect3', url: 'https://connect3.app', where: 'Melbourne', when: 'Oct 2025 – Mar 2026',
+    points: [
+      'Built the frontend in Next.js and TypeScript with Tailwind and shadcn/ui, including core UI components and interactions.',
+      'Helped design the database on Supabase Postgres, using pgvector and OpenAI embeddings for semantic search.',
+    ],
+    tags: ['Next.js', 'TypeScript', 'Supabase', 'pgvector', 'OpenAI API'],
+  },
+  {
+    title: 'Programming Bootcamp Tutor', org: 'Monash University', where: 'Melbourne', when: 'Jul 2025',
     points: [
       'Led group sessions on Python fundamentals and guided students through programming tasks.',
       'Helped students debug their code and learn basic data structures and algorithms.',
@@ -66,29 +82,23 @@ export const WORK: Entry[] = [
 
 export const TEAMS: Entry[] = [
   {
-    title: 'Machine Learning Team Member', org: 'Monash DeepNeuron', when: 'Mar 2026 – Present', current: true,
-    points: ["Rebuilt the team's fingerspelling recognition model, reaching 97.4% validation accuracy."],
+    title: 'Machine Learning Team Member', org: 'Monash DeepNeuron', where: 'Melbourne', when: 'Mar 2026 – Aug 2026',
+    points: [
+      'Responsible for the model pipeline of SignAI, which translates Australian Sign Language (Auslan) to English.',
+      'Trained an Auslan fingerspelling classifier to 97.4% validation accuracy, cutting error by ~60% over the baseline.',
+    ],
     tags: ['Machine learning', 'Python'],
   },
   {
-    title: 'Software Developer', org: 'Connect3', when: 'Oct 2025 – Mar 2026',
+    title: 'Software Team Member', org: 'Monash Nova Rover', where: 'Melbourne', when: 'Aug 2025 – Jul 2026',
     points: [
-      'Built features in Next.js and TypeScript with Tailwind CSS and shadcn/ui.',
-      'Implemented semantic search using OpenAI embeddings stored in Supabase Postgres with pgvector.',
+      'Extended the internal GUI using TypeScript and React, and built a camera configuration management feature.',
+      'Helped migrate the simulation environment from Gazebo to Unity, developing C# scripts, rover models and terrain.',
     ],
-    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'pgvector', 'OpenAI API'],
+    tags: ['TypeScript', 'React', 'Unity', 'C#'],
   },
   {
-    title: 'Software Developer', org: 'Monash Nova Rover', when: 'Aug 2025 – Present', current: true,
-    points: [
-      "Extended the team's internal software GUI in TypeScript and React, used by over 100 team members.",
-      'Built camera configuration management and integrated new camera sensors with ROS 2.',
-      'Helped migrate the rover simulation from Gazebo to Unity (C#) for better graphics, physics and performance.',
-    ],
-    tags: ['TypeScript', 'React', 'ROS 2', 'Unity', 'C#'],
-  },
-  {
-    title: 'Education Officer', org: 'Monash Assistive Tech Team', when: 'Jul 2025 – Nov 2025',
+    title: 'Education Officer', org: 'Monash Assistive Tech Team', where: 'Melbourne', when: 'Jul 2025 – Nov 2025',
     points: [
       'Ran programming and Unity workshops on campus and with external organisations.',
       'Delivered STEM workshops for children from disadvantaged backgrounds.',
@@ -113,28 +123,38 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    name: 'AXON', kicker: 'Hackathon · Mar 2025', icon: 'trophy',
-    summary: 'Led a team of six to build an AI study-roadmap generator in 48 hours. Placed 3rd for the First Timers Prize at UniHack.',
-    tags: ['React', 'React Flow', 'Node.js', 'LangFlow'],
-    links: [{ label: 'Devpost', href: 'https://devpost.com/software/axon-learning', icon: 'ext' }],
+    name: 'TaskFlow', kicker: 'Team lead · Aug 2026 – Present', icon: 'layers', featured: true,
+    summary:
+      'A full-stack event and task management dashboard for Monash Squash Club, integrating the Humanitix API ' +
+      'with PostgreSQL. I led a team of 5 through planning, requirements gathering and client feedback, and cut ' +
+      'page load times by ~85% by moving non-blocking database writes out of the request path.',
+    stats: ['~85% faster page loads', 'Team of 5 · real client', 'Humanitix API integration'],
+    tags: ['Next.js', 'React', 'TypeScript', 'PostgreSQL', 'Drizzle ORM'],
+    links: [{ label: 'GitLab', href: 'https://gitlab.com/jguu0036/fit3162-event-planner', icon: 'ext' }],
   },
   {
-    name: 'Med Track', kicker: 'Mobile · Jun 2026', icon: 'phone',
-    summary: 'Android medication tracker with separate patient and clinician roles.',
-    tags: ['Kotlin', 'Jetpack Compose', 'Room', 'Retrofit', 'Gemini API'],
+    name: 'Med Track', kicker: 'Mobile · Mar – Jun 2026', icon: 'phone',
+    summary: 'Android medication tracker using MVVM and Room persistence. Integrates Google Gemini and the OpenFDA API, with separate patient and clinician roles and SQL-computed statistics.',
+    tags: ['Kotlin', 'Jetpack Compose', 'Room', 'Gemini API', 'OpenFDA'],
     links: [{ label: 'Code', href: 'https://github.com/yens5757/MedTrack', icon: 'github' }],
   },
   {
-    name: 'KVis', kicker: 'Systems · Feb 2025', icon: 'database',
-    summary: 'An in-memory database compatible with the Redis protocol: key expiry, snapshot persistence, master–replica replication and asynchronous client handling.',
-    tags: ['Python', 'asyncio', 'Networking'],
+    name: 'KVis', kicker: 'Systems · Dec 2024 – Feb 2025', icon: 'database',
+    summary: 'Redis-compatible key-value server: key expiry, RDB snapshot loading, primary–replica replication with a PSYNC handshake and offset-based WAIT, and a streaming RESP parser that handles 256 MB writes in 1.2 s.',
+    tags: ['Python', 'asyncio', 'TCP', 'Redis protocol'],
     links: [{ label: 'Code', href: 'https://github.com/yens5757/kvis', icon: 'github' }],
   },
   {
-    name: 'Driver Tracker', kicker: 'Full-stack · Nov 2024', icon: 'layers',
-    summary: 'Driver and package management system with REST APIs, real-time status updates and third-party API integrations, deployed on AWS.',
-    tags: ['Angular', 'Node.js / Express', 'MongoDB', 'Socket.io', 'AWS'],
+    name: 'Driver Tracker', kicker: 'Full-stack · Sep – Nov 2024', icon: 'route',
+    summary: 'Driver and package management system deployed on AWS, with REST APIs, status filtering, form validation and Google Gemini for driver assistance.',
+    tags: ['Angular', 'Node.js / Express', 'MongoDB', 'AWS', 'Gemini API'],
     links: [{ label: 'Code', href: 'https://github.com/yens5757/driver-tracker', icon: 'github' }],
+  },
+  {
+    name: 'AXON', kicker: 'Hackathon · Mar 2025', icon: 'trophy',
+    summary: 'Led a 6-person team to build an AI study-roadmap generator in 48 hours, placing 3rd in the First Timers Prize at UniHack.',
+    tags: ['React', 'React Flow', 'Node.js', 'LangFlow'],
+    links: [{ label: 'Devpost', href: 'https://devpost.com/software/axon-learning', icon: 'ext' }],
   },
   {
     name: 'Ray Vanguard', kicker: 'Game · Jun 2024', icon: 'game',
@@ -143,7 +163,7 @@ export const PROJECTS: Project[] = [
     links: [{ label: 'Code', href: 'https://github.com/yens5757/ray-vanguard', icon: 'github' }],
   },
   {
-    name: 'Algo Visualizer', kicker: 'Algorithms · Oct 2023', icon: 'route',
+    name: 'Algo Visualizer', kicker: 'Algorithms · Oct 2023', icon: 'code',
     summary: 'Animates BFS, DFS and A* pathfinding step by step on a 2D grid.',
     tags: ['Python', 'pygame'],
     links: [{ label: 'Code', href: 'https://github.com/yens5757/algo-visualizer', icon: 'github' }],
@@ -152,15 +172,16 @@ export const PROJECTS: Project[] = [
 
 export const EDUCATION: Entry[] = [
   {
-    title: 'Bachelor of Computer Science — Advanced Computer Science', org: 'Monash University', when: 'Jul 2024 – Dec 2026',
+    title: 'Bachelor of Computer Science', org: 'Monash University', where: 'Melbourne', when: 'Jun 2024 – Dec 2026',
     points: [
+      'GPA 3.5 / 4.0.',
       'Transferred from Swinburne with 11 of 12 units credited.',
       'Coursework: Data Structures & Algorithms, Databases, Web Development, Discrete & Continuous Mathematics.',
       'Member of the Monash Algorithms & Problem Solving Club.',
     ],
   },
   {
-    title: 'Bachelor of Computer Science — Artificial Intelligence', org: 'Swinburne University of Technology', when: 'Feb 2023 – Jul 2024',
+    title: 'Bachelor of Computer Science — Artificial Intelligence', org: 'Swinburne University of Technology', where: 'Melbourne', when: 'Feb 2023 – Jul 2024',
     points: [
       'Swinburne International Excellence Scholarship.',
       'Coursework: Object-Oriented Programming, Cloud Computing, Networking & Systems, Introduction to AI.',
@@ -176,8 +197,8 @@ export const AWARDS = [
 ];
 
 export const SKILLS: { group: string; icon: IconName; items: string[] }[] = [
-  { group: 'Languages', icon: 'code', items: ['Python', 'TypeScript', 'JavaScript', 'SQL', 'C#', 'Kotlin', 'C++', 'Ruby'] },
-  { group: 'Frontend', icon: 'layers', items: ['React', 'Angular', 'Next.js', 'Tailwind CSS', 'Jetpack Compose'] },
-  { group: 'Backend & data', icon: 'database', items: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'DuckDB', 'Redis', 'REST APIs'] },
-  { group: 'Tools & platforms', icon: 'wrench', items: ['Git', 'GitHub Actions', 'AWS', 'Supabase', 'ROS 2', 'Unity'] },
+  { group: 'Languages', icon: 'code', items: ['Python', 'TypeScript', 'JavaScript', 'SQL', 'C#', 'C++', 'Kotlin', 'Java', 'Ruby'] },
+  { group: 'Frameworks & libraries', icon: 'layers', items: ['React', 'Next.js', 'Angular', 'Tailwind CSS', 'Node.js', 'Express', 'Jetpack Compose', 'asyncio'] },
+  { group: 'Databases & cloud', icon: 'database', items: ['PostgreSQL', 'Supabase', 'pgvector', 'MySQL', 'MongoDB', 'Redis', 'Oracle', 'DuckDB', 'AWS', 'Azure'] },
+  { group: 'Practices & tools', icon: 'wrench', items: ['Data structures & algorithms', 'OOP', 'Functional programming', 'REST APIs', 'Unit testing', 'Git', 'GitHub Actions', 'Linux (NixOS)', 'Jira'] },
 ];
