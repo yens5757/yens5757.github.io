@@ -86,7 +86,7 @@ export const COMMITS = [
           "Weekly automated pipeline: Python · DuckDB/SQL · React + TypeScript · GitHub Actions"],
     del: [], url: "https://yens5757.github.io/order-flow-watch/" },
 
-  { branch: "work",     hash: "a7c3d58", date: "Nov 2026", end: "Feb 2027", msg: "Incoming Strategy and Product Intern @ Jane Street",
+  { branch: "work",     hash: "a7c3d58", date: "Dec 2026", end: "Feb 2027", msg: "Incoming Strategy and Product Intern @ Jane Street",
     add: ["Hong Kong"], del: [] },
 
   { branch: "main",    hash: "HEAD",    date: "Dec 2026", msg: "Graduating",

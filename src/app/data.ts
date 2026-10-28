@@ -49,7 +49,7 @@ export const PROFILE = {
 export const WORK: Entry[] = [
   {
     title: 'Strategy and Product Intern', org: 'Jane Street', where: 'Hong Kong',
-    when: 'Nov 2026 – Feb 2027', upcoming: true, points: [],
+    when: 'Dec 2026 – Feb 2027', upcoming: true, points: [],
   },
   {
     title: 'Software Engineer Intern', org: 'Culture Amp', where: 'Melbourne', when: 'Nov 2025 – Feb 2026',
@@ -108,13 +108,13 @@ export const TEAMS: Entry[] = [
 
 export const PROJECTS: Project[] = [
   {
-    name: 'Order Flow Watch', kicker: 'Data pipeline · Oct 2026', icon: 'chart', featured: true,
+    name: 'Order Flow Watch', kicker: 'Data pipeline · Oct 2026 – Present', icon: 'chart', featured: true,
     summary:
       'Do retail brokers that get paid for routing customer orders give those customers worse prices? ' +
-      'An automated pipeline that collects new SEC Rule 605 and 606 disclosures every week, analyses ' +
-      'millions of rows with SQL and statistical tests, and publishes an interactive website explaining ' +
+      'A Python pipeline collects new SEC Rule 605 and 606 reports every week, loads them into DuckDB, ' +
+      'analyses them with SQL and statistical tests, and publishes a React/TypeScript dashboard explaining ' +
       'the results to non-experts.',
-    stats: ['Weekly automated refresh', '4M+ rows a month', 'SQL + permutation tests'],
+    stats: ['Weekly automated refresh', '~400 broker-dealers', '~5M rows a month'],
     tags: ['Python', 'DuckDB / SQL', 'React', 'TypeScript', 'GitHub Actions'],
     links: [
       { label: 'Live site', href: 'https://yens5757.github.io/order-flow-watch/', icon: 'ext' },
