@@ -107,7 +107,10 @@ export const PROJECTS: Project[] = [
       'the results to non-experts.',
     stats: ['Weekly automated refresh', '4M+ rows a month', 'SQL + permutation tests'],
     tags: ['Python', 'DuckDB / SQL', 'React', 'TypeScript', 'GitHub Actions'],
-    links: [{ label: 'Code', href: 'https://github.com/yens5757/order-flow-watch', icon: 'github' }],
+    links: [
+      { label: 'Live site', href: 'https://yens5757.github.io/order-flow-watch/', icon: 'ext' },
+      { label: 'Code', href: 'https://github.com/yens5757/order-flow-watch', icon: 'github' },
+    ],
   },
   {
     name: 'AXON', kicker: 'Hackathon · Mar 2025', icon: 'trophy',

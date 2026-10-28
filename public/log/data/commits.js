@@ -79,7 +79,7 @@ export const COMMITS = [
   { branch: "projects", hash: "d4e91c7", date: "Oct 2026", msg: "Order Flow Watch",
     add: ["Do brokers paid for order flow give worse fills? Joins SEC Rule 605 + 606 disclosures",
           "Weekly automated pipeline: Python · DuckDB/SQL · React + TypeScript · GitHub Actions"],
-    del: [], url: "https://github.com/yens5757/order-flow-watch" },
+    del: [], url: "https://yens5757.github.io/order-flow-watch/" },
 
   { branch: "main",    hash: "HEAD",    date: "Dec 2026", msg: "Graduating",
     add: ["open for grad role"], del: [] },
