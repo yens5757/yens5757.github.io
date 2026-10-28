@@ -23,7 +23,7 @@ src/
     icon.component.ts      inline SVG icons
     browser.ts             theme service + scroll-reveal directive (browser-only code)
 public/
-  photo.jpg, resume.pdf, favicon.svg
+  resume.pdf, favicon.svg
   log/                     the "git log of a life" version, linked from the footer
 ```
 

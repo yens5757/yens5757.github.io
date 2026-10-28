@@ -12,9 +12,8 @@
   background-size:22px 22px;
   mask-image:linear-gradient(to bottom, #000 0%, transparent 85%);
 }
-.hero-grid{ position:relative; display:grid; grid-template-columns:260px 1fr; gap:60px; align-items:center; }
-.photo{ position:relative; width:260px; height:260px; padding:5px; border-radius:50%; background:var(--grad); box-shadow:var(--shadow-lg); }
-.photo img{ width:100%; height:100%; border-radius:50%; object-fit:cover; border:4px solid var(--bg); display:block; }
+.hero-grid{ position:relative; }
+.hero-text{ max-width:760px; }
 .status{
   display:inline-flex; align-items:center; gap:8px; padding:6px 13px; border-radius:999px; margin-bottom:18px;
   background:color-mix(in srgb, var(--ok) 12%, var(--surface)); border:1px solid color-mix(in srgb, var(--ok) 30%, transparent);
@@ -22,7 +21,7 @@
 }
 .status .dot{ width:8px; height:8px; border-radius:50%; background:var(--ok); animation:pulse 2s ease-in-out infinite; }
 @keyframes pulse{ 0%,100%{ box-shadow:0 0 0 0 color-mix(in srgb, var(--ok) 45%, transparent); } 50%{ box-shadow:0 0 0 6px transparent; } }
-h1{ font-family:var(--display); font-size:56px; line-height:1.05; letter-spacing:-.03em; font-weight:800; }
+h1{ font-family:var(--display); font-size:64px; line-height:1.05; letter-spacing:-.03em; font-weight:800; }
 .title{
   margin-top:10px; font-size:19px; font-weight:600;
   background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
@@ -85,16 +84,10 @@ h3.group{ font-size:13px; text-transform:uppercase; letter-spacing:.1em; color:v
 /* ---- responsive ---- */
 @media (max-width:960px){
   .grid{ grid-template-columns:repeat(2, 1fr); }
-  .hero-grid{ grid-template-columns:200px 1fr; gap:40px; }
-  .photo{ width:200px; height:200px; }
 }
 @media (max-width:760px){
   .hero{ padding:52px 0 64px; }
-  .hero-grid{ grid-template-columns:1fr; text-align:center; gap:26px; }
-  .photo{ margin:0 auto; width:160px; height:160px; }
-  .lead{ margin-left:auto; margin-right:auto; }
-  .facts, .actions{ justify-content:center; }
-  h1{ font-size:42px; }
+  h1{ font-size:44px; }
   h2{ font-size:28px; }
   .grid, .skills, .awards{ grid-template-columns:1fr; }
   .cta{ padding:40px 20px; }

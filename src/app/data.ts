@@ -44,7 +44,6 @@ export const PROFILE = {
   linkedin: 'https://linkedin.com/in/aikenlee',
   github: 'https://github.com/yens5757',
   resume: 'resume.pdf',
-  photo: 'photo.jpg',
 };
 
 export const WORK: Entry[] = [
