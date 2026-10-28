@@ -18,7 +18,7 @@ import { PROFILE } from './data';
 
         <nav class="links" [class.open]="open()" id="nav-links" aria-label="Sections">
           @for (s of sections; track s.id) {
-            <a [href]="'#' + s.id" [class.active]="active() === s.id" (click)="open.set(false)">{{ s.label }}</a>
+            <a [href]="'#' + s.id" [class.active]="active() === s.id" (click)="select(s.id)">{{ s.label }}</a>
           }
           <a class="btn btn-primary btn-sm" [href]="resume" target="_blank" rel="noopener">Resume</a>
         </nav>
@@ -53,18 +53,37 @@ export class NavComponent {
   ];
   readonly open = signal(false);
   readonly active = signal('');
+  // a clicked link stays highlighted until the visitor scrolls by hand
+  private pinned = false;
+
+  select(id: string) {
+    this.open.set(false);
+    this.active.set(id);
+    this.pinned = true;
+  }
 
   constructor() {
-    // highlight the link for the section in the middle of the screen
+    // highlight the last section whose top has passed the middle of the screen; at the very bottom of
+    // the page pick the last section, since a short final section can never reach the middle
     afterNextRender(() => {
-      const io = new IntersectionObserver(
-        (entries) => entries.forEach((e) => e.isIntersecting && this.active.set(e.target.id)),
-        { rootMargin: '-45% 0px -50% 0px' },
-      );
-      this.sections.forEach((s) => {
-        const el = document.getElementById(s.id);
-        if (el) io.observe(el);
-      });
+      const els = this.sections
+        .map((s) => document.getElementById(s.id))
+        .filter((el): el is HTMLElement => !!el);
+      let queued = false;
+      const update = () => {
+        queued = false;
+        if (this.pinned) return;
+        const root = document.documentElement;
+        if (innerHeight + scrollY >= root.scrollHeight - 4) return this.active.set(els[els.length - 1].id);
+        const passed = els.filter((el) => el.getBoundingClientRect().top <= innerHeight * 0.45);
+        this.active.set(passed.length ? passed[passed.length - 1].id : '');
+      };
+      addEventListener('scroll', () => {
+        if (!queued) { queued = true; requestAnimationFrame(update); }
+      }, { passive: true });
+      const unpin = () => { this.pinned = false; };
+      for (const ev of ['wheel', 'touchstart', 'keydown', 'mousedown'] as const) addEventListener(ev, unpin, { passive: true });
+      update();
     });
   }
 }
