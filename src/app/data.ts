@@ -176,11 +176,10 @@ export const EDUCATION: Entry[] = [
       'GPA 3.5 / 4.0.',
       'Transferred from Swinburne with 11 of 12 units credited.',
       'Coursework: Data Structures & Algorithms, Databases, Web Development, Discrete & Continuous Mathematics.',
-      'Member of the Monash Algorithms & Problem Solving Club.',
     ],
   },
   {
-    title: 'Bachelor of Computer Science — Artificial Intelligence', org: 'Swinburne University of Technology', where: 'Melbourne', when: 'Feb 2023 – Jul 2024',
+    title: 'Bachelor of Computer Science', org: 'Swinburne University of Technology', where: 'Melbourne', when: 'Feb 2023 – Jul 2024',
     points: [
       'Swinburne International Excellence Scholarship.',
       'Coursework: Object-Oriented Programming, Cloud Computing, Networking & Systems, Introduction to AI.',

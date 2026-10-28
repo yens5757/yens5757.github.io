@@ -26,7 +26,7 @@ export const COMMITS = [
     add: ["Unity + C# foundations", "OOP & event-driven design", "singleton & factory patterns"], del: [] },
 
   { branch: "school",   hash: "8e2c5b0", date: "Feb 2023", end: "Jul 2024", msg: "Started Bachelor of CS @ Swinburne",
-    add: ["major: Artificial Intelligence", "Swinburne International Excellence Scholarship"], del: [] },
+    add: ["Swinburne International Excellence Scholarship"], del: [] },
 
   { branch: "projects", hash: "a1607b5", date: "Oct 2023", msg: "Algo Visualizer",
     add: ["Animates BFS / DFS / A* pathfinding on a 2D grid", "Python · CLI + GUI"],
