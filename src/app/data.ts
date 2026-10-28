@@ -28,13 +28,13 @@ export interface Project {
 
 export const PROFILE = {
   name: 'Aiken Lee',
-  title: 'Software Engineer · Computer Science at Monash University',
-  status: 'Open to graduate software engineering roles',
+  title: 'Computer Science at Monash University',
+  status: 'Open to graduate opportunities',
   lead:
     'Final-year Computer Science student at Monash University, graduating in December 2026. ' +
     'Incoming Strategy and Product Intern at Jane Street in Hong Kong, and previously a Software Engineer ' +
     'Intern at Culture Amp. I build full-stack products and data pipelines, and I enjoy turning messy ' +
-    'real-world data into something people can use.',
+    'real-world data, from markets to everyday apps, into something people can use.',
   facts: [
     { icon: 'pin' as IconName, text: 'Melbourne, Australia' },
     { icon: 'cap' as IconName, text: 'Graduating Dec 2026' },
@@ -129,7 +129,10 @@ export const PROJECTS: Project[] = [
       'page load times by ~85% by moving non-blocking database writes out of the request path.',
     stats: ['~85% faster page loads', 'Team of 5 · real client', 'Humanitix API integration'],
     tags: ['Next.js', 'React', 'TypeScript', 'PostgreSQL', 'Drizzle ORM'],
-    links: [{ label: 'GitLab', href: 'https://gitlab.com/jguu0036/fit3162-event-planner', icon: 'ext' }],
+    links: [
+      { label: 'Live site', href: 'https://task-flow-liard-eight.vercel.app/', icon: 'ext' },
+      { label: 'GitLab', href: 'https://gitlab.com/jguu0036/fit3162-event-planner', icon: 'code' },
+    ],
   },
   {
     name: 'Med Track', kicker: 'Mobile · Mar – Jun 2026', icon: 'phone',

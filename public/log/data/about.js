@@ -4,7 +4,7 @@
 export const ABOUT = {
   name: "Aiken Lee",
   role: "Incoming @ Jane Street · ex-Culture Amp",
-  blurb: "Computer Science @ Monash, graduating Dec 2026 and looking for graduate software engineering roles. Speaks English, Cantonese and Mandarin.",
+  blurb: "Computer Science @ Monash, graduating Dec 2026 and open to graduate opportunities. Speaks English, Cantonese and Mandarin.",
   links: [
     { label: "Email",    href: "mailto:chikitlee2001@gmail.com",   ic: "@", primary: true },
     { label: "Resume",   href: "../resume.pdf",                    ic: "↓" },

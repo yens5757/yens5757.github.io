@@ -4,7 +4,7 @@ Live at https://yens5757.github.io
 
 A one-page portfolio built with **Angular 19** (standalone components, signals, the new control flow)
 and pre-rendered to static HTML at build time, so the content is readable without JavaScript and
-link previews work. Light and dark themes follow the system setting, with a toggle in the header.
+link previews work. Dark theme by default, with a light-mode toggle in the header.
 
 ## Edit the content
 

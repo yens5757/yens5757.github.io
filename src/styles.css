@@ -43,15 +43,6 @@
   --shadow-lg:0 10px 34px rgba(0,0,0,.45);
   color-scheme:dark;
 }
-/* no-JS fallback: follow the system setting */
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme]){
-    --bg:#0b0e14; --surface:#131821; --alt:#0f131b; --ink:#eceef3; --ink-2:#b5bcc9; --muted:#8790a2;
-    --line:#232a36; --accent:#7ea2ff; --accent-2:#b392ff; --accent-soft:#18213a; --on-accent:#0b1020;
-    --tag:#1b212c; --ok:#4ade80; --grad:linear-gradient(120deg, #4f7cff, #9d6bff);
-    --shadow:0 1px 2px rgba(0,0,0,.35); --shadow-lg:0 10px 34px rgba(0,0,0,.45); color-scheme:dark;
-  }
-}
 
 /* ---- base ---- */
 *{ box-sizing:border-box; margin:0; padding:0; }

@@ -1,28 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aiken Lee — Software Engineer</title>
+  <title>Aiken Lee</title>
   <base href="/" />
-  <meta name="description" content="Aiken Lee — Computer Science at Monash University, graduating Dec 2026. Incoming Strategy and Product Intern at Jane Street, former Software Engineer Intern at Culture Amp. Looking for graduate software engineering roles." />
+  <meta name="description" content="Aiken Lee — Computer Science at Monash University, graduating Dec 2026. Incoming Strategy and Product Intern at Jane Street, former Software Engineer Intern at Culture Amp. Open to graduate opportunities." />
   <meta name="author" content="Aiken Lee" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
   <!-- social share cards -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Aiken Lee — Software Engineer" />
-  <meta property="og:description" content="Computer Science at Monash, graduating Dec 2026. Incoming Jane Street intern, ex-Culture Amp. Open to graduate software engineering roles." />
+  <meta property="og:title" content="Aiken Lee" />
+  <meta property="og:description" content="Computer Science at Monash, graduating Dec 2026. Incoming Jane Street intern, ex-Culture Amp. Open to graduate opportunities." />
   <meta property="og:url" content="https://yens5757.github.io/" />
   <meta name="twitter:card" content="summary" />
 
-  <!-- pick the theme before first paint so there is no flash -->
+  <!-- dark by default; apply a saved choice before first paint so there is no flash -->
   <script>
     (function () {
       var d = document.documentElement, t = null;
       d.classList.add('js');
       try { t = localStorage.getItem('theme'); } catch (e) {}
-      d.dataset.theme = t || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      if (t === 'light' || t === 'dark') d.dataset.theme = t;
     })();
   </script>
 
