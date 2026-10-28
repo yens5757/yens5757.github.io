@@ -130,7 +130,7 @@ export const PROJECTS: Project[] = [
     stats: ['~85% faster page loads', 'Team of 5 · real client', 'Humanitix API integration'],
     tags: ['Next.js', 'React', 'TypeScript', 'PostgreSQL', 'Drizzle ORM'],
     links: [
-      { label: 'Live site', href: 'https://task-flow-liard-eight.vercel.app/', icon: 'ext' },
+      { label: 'Demo site', href: 'https://task-flow-liard-eight.vercel.app/', icon: 'ext' },
       { label: 'GitLab', href: 'https://gitlab.com/jguu0036/fit3162-event-planner', icon: 'code' },
     ],
   },
