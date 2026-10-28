@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aiken Lee — Software Engineer</title>
+  <base href="/" />
+  <meta name="description" content="Aiken Lee — Computer Science at Monash University, graduating Dec 2026. Former software engineering intern at Culture Amp. Looking for graduate software engineering roles." />
+  <meta name="author" content="Aiken Lee" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- social share cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Aiken Lee — Software Engineer" />
+  <meta property="og:description" content="Computer Science at Monash, graduating Dec 2026. Ex-Culture Amp intern. Open to graduate software engineering roles." />
+  <meta property="og:url" content="https://yens5757.github.io/" />
+  <meta property="og:image" content="https://yens5757.github.io/photo.jpg" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- pick the theme before first paint so there is no flash -->
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      d.classList.add('js');
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      d.dataset.theme = t || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>

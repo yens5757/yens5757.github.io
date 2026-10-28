@@ -1,0 +1,111 @@
+<app-nav />
+
+<main id="top">
+  <!-- ================= about ================= -->
+  <section class="hero" id="about">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="photo">
+        <img [src]="profile.photo" width="260" height="260" alt="Portrait of Aiken Lee" />
+      </div>
+      <div class="hero-text">
+        <p class="status"><span class="dot"></span>{{ profile.status }}</p>
+        <h1>{{ profile.name }}</h1>
+        <p class="title">{{ profile.title }}</p>
+        <p class="lead">{{ profile.lead }}</p>
+        <ul class="facts">
+          @for (f of profile.facts; track f.text) {
+            <li><app-icon [name]="f.icon" />{{ f.text }}</li>
+          }
+        </ul>
+        <div class="actions">
+          <a class="btn btn-primary" [href]="profile.resume" target="_blank" rel="noopener"><app-icon name="download" />Download resume</a>
+          <a class="btn" [href]="'mailto:' + profile.email"><app-icon name="mail" />Email me</a>
+          <a class="btn btn-icon" [href]="profile.linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><app-icon name="linkedin" /></a>
+          <a class="btn btn-icon" [href]="profile.github" target="_blank" rel="noopener" aria-label="GitHub"><app-icon name="github" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= experience ================= -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <div class="sec-head" appReveal><span class="num">01</span><h2>Experience</h2></div>
+
+      <h3 class="group">Work</h3>
+      <div class="timeline">
+        @for (e of work; track e.title + e.org) { <app-entry class="card" appReveal [entry]="e" /> }
+      </div>
+
+      <h3 class="group">Student teams</h3>
+      <div class="timeline">
+        @for (e of teams; track e.title + e.org) { <app-entry class="card" appReveal [entry]="e" /> }
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= projects ================= -->
+  <section class="section alt" id="projects">
+    <div class="wrap">
+      <div class="sec-head" appReveal><span class="num">02</span><h2>Projects</h2></div>
+      <div class="grid">
+        @for (p of projects; track p.name) { <app-project appReveal [project]="p" /> }
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= education ================= -->
+  <section class="section" id="education">
+    <div class="wrap">
+      <div class="sec-head" appReveal><span class="num">03</span><h2>Education</h2></div>
+      <div class="timeline">
+        @for (e of education; track e.org) { <app-entry class="card" appReveal [entry]="e" /> }
+      </div>
+
+      <h3 class="group">Awards &amp; training</h3>
+      <ul class="awards">
+        @for (a of awards; track a.what) {
+          <li class="card" appReveal><span class="medal"><app-icon name="trophy" /></span><div><strong>{{ a.what }}</strong><span>{{ a.where }}</span></div></li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= skills ================= -->
+  <section class="section alt" id="skills">
+    <div class="wrap">
+      <div class="sec-head" appReveal><span class="num">04</span><h2>Skills</h2></div>
+      <div class="skills">
+        @for (s of skills; track s.group) {
+          <div class="card" appReveal>
+            <h4><span class="tile"><app-icon [name]="s.icon" /></span>{{ s.group }}</h4>
+            <ul class="tags">@for (i of s.items; track i) { <li>{{ i }}</li> }</ul>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= contact ================= -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="cta" appReveal>
+        <h2>Let's talk</h2>
+        <p>I'm looking for graduate software engineering roles. The quickest way to reach me is by email.</p>
+        <div class="actions">
+          <a class="btn btn-light" [href]="'mailto:' + profile.email"><app-icon name="mail" />{{ profile.email }}</a>
+          <a class="btn btn-ghost" [href]="profile.linkedin" target="_blank" rel="noopener"><app-icon name="linkedin" />LinkedIn</a>
+          <a class="btn btn-ghost" [href]="profile.github" target="_blank" rel="noopener"><app-icon name="github" />GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <span>© {{ year }} {{ profile.name }} · Built with Angular</span>
+    <a href="log/">Developer view: my career as a git log <app-icon name="arrow" /></a>
+  </div>
+</footer>

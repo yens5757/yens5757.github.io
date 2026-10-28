@@ -2,27 +2,40 @@
 
 Live at https://yens5757.github.io
 
-A plain one-page portfolio: about, experience, projects, education, skills, contact.
-No build step and no framework; content is written straight into `index.html` so it reads
-well for recruiters, search engines and link previews.
+A one-page portfolio built with **Angular 19** (standalone components, signals, the new control flow)
+and pre-rendered to static HTML at build time, so the content is readable without JavaScript and
+link previews work. Light and dark themes follow the system setting, with a toggle in the header.
+
+## Edit the content
+
+Everything on the page lives in `src/app/data.ts`: profile, experience, projects, education, awards
+and skills. The components only lay it out. To update the resume, replace `public/resume.pdf`.
 
 ```
-index.html      all content (edit here)
-styles.css      design tokens at the top (light + dark), then layout and components
-script.js       mobile menu, active-section highlight
-photo.jpg       portrait (480×480)
-resume.pdf      linked from the nav and hero: replace the file to update it
-log/            the "git log of a life" version, linked from the footer
+src/
+  index.html               meta tags + theme picked before first paint
+  styles.css               design tokens (light + dark) and shared pieces
+  app/
+    data.ts                all content
+    app.component.*        page layout: hero and sections
+    nav.component.*        sticky header, theme toggle, mobile menu, active-section highlight
+    cards.ts               timeline entry + project card
+    icon.component.ts      inline SVG icons
+    browser.ts             theme service + scroll-reveal directive (browser-only code)
+public/
+  photo.jpg, resume.pdf, favicon.svg
+  log/                     the "git log of a life" version, linked from the footer
 ```
 
 ## Run locally
 
 ```bash
-python -m http.server 8000
-# then visit http://localhost:8000
+npm install
+npm start          # http://localhost:4200
+npm run build      # -> dist/portfolio/browser
 ```
 
 ## Deploy
 
-`.github/workflows/pages.yml` publishes every push to `main`
+`.github/workflows/pages.yml` builds and publishes every push to `main`
 (Settings → Pages → Source: GitHub Actions).
