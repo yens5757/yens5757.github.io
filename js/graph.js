@@ -32,6 +32,7 @@ export function renderFeed(COMMITS, BRANCHES) {
           ${chip}
         </div>
         <div class="c-meta"><span class="hash">${c.hash}</span> · ${esc(t.range)}</div>
+        ${c.add[0] ? `<div class="c-sum">${esc(c.add[0])}</div>` : ""}
         <div class="diff"><div class="diff-inner">
           ${c.add.map((a) => `<div class="diff-line add"><span class="g">+</span> ${esc(a)}</div>`).join("")}
           ${c.del.map((d) => `<div class="diff-line del"><span class="g">\u2212</span> ${esc(d)}</div>`).join("")}

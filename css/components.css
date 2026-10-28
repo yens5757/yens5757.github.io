@@ -121,6 +121,10 @@
 .diff-line.add{ color:var(--add); }
 .diff-line.del{ color:var(--del); }
 .diff-line .g{ color:var(--text-faint); user-select:none; }
+
+/* one-line preview so a skim shows what each commit was; the full diff replaces it when open */
+.c-sum{ margin-top:7px; font-size:13.5px; color:var(--text-dim); }
+.commit.open .c-sum{ display:none; }
 .c-repo{
   display:inline-block; margin-top:11px; font-family:var(--mono); font-size:12.5px;
   color:var(--node-c); border-bottom:1px solid transparent; transition:border-color .15s var(--ease);

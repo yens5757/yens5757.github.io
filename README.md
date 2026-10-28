@@ -52,6 +52,9 @@ python3 -m http.server 8000
 
 1. Create a repo named `yens5757.github.io`.
 2. Push these files.
-3. Settings → Pages → Source: `main` branch → Save.
+3. `.github/workflows/pages.yml` publishes every push to `main`
+   (Settings → Pages → Source: GitHub Actions).
+
+`resume.pdf` is linked from the rail: replace the file to update it.
 
 Live at `https://yens5757.github.io` shortly after.
