@@ -108,7 +108,7 @@ export const TEAMS: Entry[] = [
 
 export const PROJECTS: Project[] = [
   {
-    name: 'Order Flow Watch', kicker: 'Data pipeline · Oct 2026 – Present', icon: 'chart', featured: true,
+    name: 'Fills and Fees', kicker: 'Data pipeline · Oct 2026 – Present', icon: 'chart', featured: true,
     summary:
       'Do retail brokers that get paid for routing customer orders give those customers worse prices? ' +
       'A Python pipeline collects new SEC Rule 605 and 606 reports every week, loads them into DuckDB, ' +
@@ -117,7 +117,7 @@ export const PROJECTS: Project[] = [
     stats: ['Weekly automated refresh', '~400 broker-dealers', '~5M rows a month'],
     tags: ['Python', 'DuckDB / SQL', 'React', 'TypeScript', 'GitHub Actions'],
     links: [
-      { label: 'Live site', href: 'https://yens5757.github.io/order-flow-watch/', icon: 'ext' },
+      { label: 'Live site', href: 'https://fillsandfees.com/', icon: 'ext' },
       { label: 'Code', href: 'https://github.com/yens5757/order-flow-watch', icon: 'github' },
     ],
   },
