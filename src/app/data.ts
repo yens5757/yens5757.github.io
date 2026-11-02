@@ -24,6 +24,8 @@ export interface Project {
   links: { label: string; href: string; icon: IconName }[];
   featured?: boolean;
   stats?: string[];
+  /** Preview card for the featured project; `src` is a file under public/, served from the site root. */
+  image?: { src: string; alt: string };
 }
 
 export const PROFILE = {
@@ -32,11 +34,12 @@ export const PROFILE = {
   status: 'Open to graduate opportunities',
   lead:
     'Final-year Computer Science student at Monash University, graduating in December 2026. ' +
-    'Incoming Strategy and Product Intern at Jane Street in Hong Kong, and previously a Software Engineer ' +
-    'Intern at Culture Amp. I build full-stack products and data pipelines, and I enjoy turning messy ' +
+    'Incoming Strategy and Product Intern at Jane Street in Hong Kong, previously a Software Engineer ' +
+    'Intern at Culture Amp. I build data pipelines and full-stack products, and I like turning messy ' +
     'real-world data, from markets to everyday apps, into something people can use.',
   facts: [
-    { icon: 'pin' as IconName, text: 'Melbourne, Australia' },
+    // No flag / id-card icon exists in IconName, so work rights share the pin with the city.
+    { icon: 'pin' as IconName, text: 'Hong Kong PR · Melbourne' },
     { icon: 'cap' as IconName, text: 'Graduating Dec 2026' },
     { icon: 'chat' as IconName, text: 'English · Cantonese · Mandarin' },
   ],
@@ -108,21 +111,27 @@ export const TEAMS: Entry[] = [
 
 export const PROJECTS: Project[] = [
   {
-    name: 'Fills and Fees', kicker: 'Data pipeline · Oct 2026 – Present', icon: 'chart', featured: true,
+    name: 'Fills and Fees', kicker: 'Data product · Oct 2026 – Present', icon: 'chart', featured: true,
     summary:
-      'Do retail brokers that get paid for routing customer orders give those customers worse prices? ' +
-      'A Python pipeline collects new SEC Rule 605 and 606 reports every week, loads them into DuckDB, ' +
-      'analyses them with SQL and statistical tests, and publishes a React/TypeScript dashboard explaining ' +
-      'the results to non-experts.',
-    stats: ['Weekly automated refresh', '~400 broker-dealers', '~5M rows a month'],
+      'A public site comparing the fill quality and fees of 25 US brokers from the SEC Rule 605/606 reports ' +
+      'they must publish. A Python ETL pipeline collects reports from ~400 broker-dealers every week ' +
+      '(GitHub Actions) and loads ~5M rows a month into DuckDB; matched-trade statistics show payment for ' +
+      'order flow does not predict fill quality. The React/TypeScript front end has 333 pre-rendered pages, ' +
+      'a yearly-cost calculator and side-by-side broker comparisons.',
+    stats: ['25 US brokers', '~5M rows a month', '333 pre-rendered pages'],
     tags: ['Python', 'DuckDB / SQL', 'React', 'TypeScript', 'GitHub Actions'],
     links: [
       { label: 'Live site', href: 'https://fillsandfees.com/', icon: 'ext' },
       { label: 'Code', href: 'https://github.com/yens5757/order-flow-watch', icon: 'github' },
     ],
+    image: {
+      src: 'fills-and-fees.png',
+      alt: 'Fills and Fees home page: "Is your broker getting you a good price?" beside a chart of the extra ' +
+        'cost on a $10,000 trade at seven US brokers, from Fidelity at −$0.09 to eToro at $1.77.',
+    },
   },
   {
-    name: 'TaskFlow', kicker: 'Team lead · Aug 2026 – Present', icon: 'layers', featured: true,
+    name: 'TaskFlow', kicker: 'Team lead · Aug – Oct 2026', icon: 'layers', featured: true,
     summary:
       'A full-stack event and task management dashboard for Monash Squash Club, integrating the Humanitix API ' +
       'with PostgreSQL. I led a team of 5 through planning, requirements gathering and client feedback, and cut ' +

@@ -1,34 +1,53 @@
+/* ============================================================
+   project.component.css — a project row on the shared left gutter.
+   Gutter: date (mono) over the kind (mono label + icon). Body: title, summary,
+   figures (accent dot each), tags, links. The featured row is the magazine lead:
+   its image spans the gutter too, the text keeps the grid below it.
+   .tags and .link are global (styles.css). No elevation, no motion.
+   ============================================================ */
 :host{
-  position:relative; display:flex; flex-direction:column; padding:22px;
-  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
-  box-shadow:var(--shadow); transition:border-color .2s, transform .2s, box-shadow .2s;
+  display:grid; grid-template-columns:var(--gutter) minmax(0,1fr); column-gap:var(--gutter-gap); align-items:start;
+  padding:var(--s-row) 0; border-top:1px solid var(--line);
 }
-:host(:hover){ transform:translateY(-3px); border-color:color-mix(in srgb, var(--accent) 40%, var(--line)); box-shadow:var(--shadow-lg); }
 
-/* featured: full width, gradient border */
-:host(.featured){
-  grid-column:1 / -1; padding:28px;
-  border:1px solid transparent;
-  background:linear-gradient(var(--surface), var(--surface)) padding-box, var(--grad) border-box;
+/* ---- gutter ---- */
+.meta{
+  display:flex; flex-direction:column; align-items:flex-start; gap:6px; padding-top:3px;
+  font-family:var(--mono); font-size:var(--t-meta); line-height:1.5; color:var(--muted);
 }
-:host(.featured) .summary{ max-width:780px; font-size:16px; }
-:host(.featured) h4{ font-size:22px; }
+.when.now{ color:var(--ok); }
+.kind{
+  display:inline-flex; align-items:center; gap:6px; --icon:14px;
+  font-size:var(--t-label); text-transform:uppercase; letter-spacing:var(--track-label);
+}
 
-.top{ display:flex; align-items:center; gap:12px; margin-bottom:12px; }
-.tile{
-  display:grid; place-items:center; width:40px; height:40px; border-radius:11px;
-  background:var(--accent-soft); color:var(--accent); --icon:20px;
-}
-:host(.featured) .tile{ background:var(--grad); color:#fff; }
-.kicker{ font-size:12px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.07em; }
-h4{ font-family:var(--display); font-size:18px; font-weight:700; }
-.summary{ margin-top:8px; color:var(--ink-2); font-size:15px; }
+/* ---- body ---- */
+.body{ min-width:0; }
+.title{ font-family:var(--display); font-size:var(--t-h4); font-weight:700; line-height:1.25; letter-spacing:-.01em; color:var(--ink); }
+.summary{ margin-top:6px; max-width:var(--measure); font-size:var(--t-small); color:var(--ink-2); }
+.stats{ display:flex; flex-wrap:wrap; gap:6px 22px; margin-top:12px; font-size:var(--t-small); font-weight:600; color:var(--ink); }
+.stats li{ display:inline-flex; align-items:center; gap:8px; }
+.stats li::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--accent); flex:none; }
+.links{ display:flex; flex-wrap:wrap; gap:8px 20px; margin-top:14px; }
 
-.stats{ display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
-.stats li{
-  padding:6px 12px; border-radius:8px; font-size:13.5px; font-weight:600; color:var(--accent);
-  background:var(--accent-soft);
+/* ---- featured: bigger title, lead-size summary, the image frame ---- */
+:host(.featured){ padding:calc(var(--s-row) + 8px) 0 calc(var(--s-row) + 12px); }
+:host(.featured) .meta{ padding-top:6px; }
+:host(.featured) .title{ font-size:var(--t-h3); line-height:1.15; letter-spacing:-.02em; }
+:host(.featured) .summary{ margin-top:10px; font-size:var(--t-lead); }
+:host(.featured) .stats{ margin-top:16px; font-size:var(--t-body); }
+
+.frame{
+  grid-column:1 / -1; display:block; margin-bottom:24px; aspect-ratio:2 / 1; overflow:hidden;   /* = the 1280x640 screenshot, so nothing is cropped */
+  border:1px solid var(--line); border-radius:var(--radius); background:var(--alt);
+  transition:border-color .15s;
 }
-.tags{ margin-top:auto; padding-top:18px; }
-.links{ display:flex; gap:18px; margin-top:16px; font-weight:600; font-size:14.5px; }
-.links a{ display:inline-flex; align-items:center; gap:6px; --icon:16px; }
+.frame img{ display:block; width:100%; height:100%; object-fit:cover; object-position:top left; }
+a.frame:hover{ border-color:var(--ink); }
+
+/* ---- phones: the gutter folds above the title, date and kind on one line ---- */
+@media (max-width:599px){
+  :host{ grid-template-columns:1fr; row-gap:6px; }
+  .meta, :host(.featured) .meta{ flex-direction:row; flex-wrap:wrap; align-items:baseline; gap:4px 12px; padding-top:0; }
+  .frame{ margin-bottom:12px; }
+}

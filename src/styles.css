@@ -1,103 +1,144 @@
 /* ============================================================
-   styles.css — design tokens (light + dark) and shared pieces.
-   Component layouts live next to their components.
+   src/styles.css — tokens (light = paper, dark = ink) + shared pieces. Component layouts stay next to their components.
+   ONE accent (blue, the resume's heading family), used only for: the hero resume button, section numbers, glance labels,
+   the "Incoming" chip, the active nav underline, link hover, the stat dots, focus rings. Everything else is ink / muted / hairline.
+   Contrast (WCAG, computed 3 Nov 2026, every text pair >= 4.5:1):
+   light  ink/bg 16.6  ink-2/bg 8.7 (8.2 on --alt)  muted/bg 5.4 (5.0 on --alt, 5.6 on --surface)  accent/bg 6.6  accent/accent-soft 6.1  on-accent/accent 7.2  ok/bg 5.0
+   dark   ink/bg 15.7  ink-2/bg 9.3 (9.0 on --alt)  muted/bg 5.8 (5.6 on --alt, 5.5 on --surface)  accent/bg 9.1  accent/accent-soft 7.3  on-accent/accent 9.1  ok/bg 9.8
    ============================================================ */
 :root{
-  --bg:#fafaf9;
-  --surface:#ffffff;
-  --alt:#f3f4f6;
-  --ink:#121620;
-  --ink-2:#434a58;
-  --muted:#6b7280;
-  --line:#e3e6eb;
-  --accent:#2f5fe3;
-  --accent-2:#7c4ddb;
-  --accent-soft:#edf1fe;
+  /* colour */
+  --bg:#f7f6f2;              /* warm paper; the whole page, no alternating bands */
+  --surface:#fcfbf9;         /* mobile menu sheet, image placeholder */
+  --alt:#f1efe9;             /* image frame background while the png loads */
+  --ink:#16171b;
+  --ink-2:#424650;           /* body copy, bullets, facts, nav links */
+  --muted:#5f6670;           /* dates, tags, labels, footer, icons beside text */
+  --line:#dcd9d1;            /* hairline (1.3:1 vs bg: a rule, not a border) */
+  --line-strong:#16171b;     /* the one heavy rule (= ink): hero glance top, section heads under 900px */
+  --accent:#1d4fc0;
+  --accent-2:#1d4fc0;        /* compatibility alias while old rules are migrated; delete afterwards */
+  --accent-soft:#e7edfb;     /* "Incoming" chip background only */
   --on-accent:#ffffff;
-  --tag:#eff1f5;
-  --ok:#15803d;
-  --grad:linear-gradient(120deg, #2f5fe3, #7c4ddb);
-  --shadow:0 1px 2px rgba(16,24,40,.05), 0 2px 8px rgba(16,24,40,.04);
-  --shadow-lg:0 8px 30px rgba(16,24,40,.10);
-  --radius:16px;
+  --ok:#1b7a3c;              /* status dot + line, "current" dates */
+  --tag:transparent;         /* tags are plain mono text; token kept so no old rule breaks mid-migration */
+  --grad:linear-gradient(var(--accent), var(--accent));  /* compatibility alias: renders flat accent until every var(--grad) is gone, then delete */
+  --shadow:none;
+  --shadow-lg:none;          /* no elevation anywhere: hairlines do the separating */
+
+  /* type */
   --font:"Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --display:"Plus Jakarta Sans", var(--font);
+  --display:"Plus Jakarta Sans", var(--font);      /* 700 + 800, the two weights index.html already loads */
+  --mono:ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;   /* system stack, nothing to download */
+  --t-h1:clamp(2.25rem, 1.5rem + 3.2vw, 3.5rem);  /* name: 36px at 390 -> 56px from ~1000 */
+  --t-h2:clamp(1.5rem, 1.2rem + 1vw, 2rem);       /* section titles 24 -> 32 */
+  --t-h3:clamp(1.375rem, 1.2rem + .8vw, 1.75rem); /* featured project title 22 -> 28 */
+  --t-h4:1.1875rem;          /* 19px row titles */
+  --t-lead:1.0625rem;        /* 17px pitch, contact line */
+  --t-body:1rem;
+  --t-small:.9375rem;        /* 15px points, summaries, links */
+  --t-meta:.8125rem;         /* 13px mono dates, tags, facts, footer */
+  --t-label:.75rem;          /* 12px mono uppercase labels */
+  --track-label:.08em;
+  --measure:62ch;
+
+  /* space + shape */
+  --wrap:1120px;
+  --pad-x:clamp(16px, 4vw, 24px);   /* page side padding: 16 at 390, 24 from 600 */
+  --nav-h:60px;
+  --s-section:clamp(56px, 7vw, 96px);
+  --s-row:20px;              /* vertical padding of every hairline row */
+  --col-label:184px;         /* sticky section-label column, desktop */
+  --col-gap:56px;
+  --gutter:152px;            /* the date / label column every row shares (fits "Dec 2026 – Feb 2027" in 13px mono) */
+  --gutter-gap:24px;
+  --radius:6px;              /* buttons, image frame, toggle */
+  --radius-pill:999px;       /* the Incoming chip only */
   color-scheme:light;
 }
+
 :root[data-theme="dark"]{
-  --bg:#0b0e14;
-  --surface:#131821;
-  --alt:#0f131b;
-  --ink:#eceef3;
-  --ink-2:#b5bcc9;
-  --muted:#8790a2;
-  --line:#232a36;
-  --accent:#7ea2ff;
-  --accent-2:#b392ff;
-  --accent-soft:#18213a;
+  --bg:#0f1012;
+  --surface:#16171a;
+  --alt:#131416;
+  --ink:#ebe9e3;
+  --ink-2:#b7b5ae;
+  --muted:#8f8e88;
+  --line:#2f3035;            /* 1.45:1 vs bg */
+  --line-strong:#ebe9e3;
+  --accent:#8fb3ff;
+  --accent-2:#8fb3ff;
+  --accent-soft:#1b2540;
   --on-accent:#0b1020;
-  --tag:#1b212c;
-  --ok:#4ade80;
-  --grad:linear-gradient(120deg, #4f7cff, #9d6bff);
-  --shadow:0 1px 2px rgba(0,0,0,.35);
-  --shadow-lg:0 10px 34px rgba(0,0,0,.45);
+  --ok:#5fcf85;
+  --tag:transparent;
+  --grad:linear-gradient(var(--accent), var(--accent));
+  --shadow:none;
+  --shadow-lg:none;
   color-scheme:dark;
 }
 
 /* ---- base ---- */
 *{ box-sizing:border-box; margin:0; padding:0; }
-html{ scroll-behavior:smooth; scroll-padding-top:76px; }
-body{
-  background:var(--bg); color:var(--ink); font-family:var(--font); font-size:16px; line-height:1.6;
-  -webkit-font-smoothing:antialiased; transition:background-color .25s, color .25s;
-}
-a{ color:var(--accent); text-decoration:none; }
+html{ scroll-behavior:smooth; scroll-padding-top:calc(var(--nav-h) + 16px); }
+body{ background:var(--bg); color:var(--ink); font-family:var(--font); font-size:var(--t-body); line-height:1.55; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+a{ color:var(--accent); text-decoration:none; transition:color .15s; }
 a:hover{ color:color-mix(in srgb, var(--accent) 80%, var(--ink)); }
 ul{ list-style:none; }
-h4{ font-size:17px; font-weight:600; line-height:1.35; }
-.wrap{ max-width:1080px; margin:0 auto; padding:0 24px; }
-:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:6px; }
-::selection{ background:color-mix(in srgb, var(--accent) 25%, transparent); }
+img{ max-width:100%; }
+.wrap{ max-width:var(--wrap); margin:0 auto; padding:0 var(--pad-x); }
+:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:4px; }
+::selection{ background:color-mix(in srgb, var(--accent) 22%, transparent); }
 
-/* theme-dependent bits (e.g. the sun/moon toggle icon) */
+/* theme-dependent bits (the sun/moon toggle icon) — unchanged */
 .show-dark{ display:none !important; }
 :root[data-theme="dark"] .show-dark{ display:inline-flex !important; }
 :root[data-theme="dark"] .show-light{ display:none !important; }
 
-/* ---- sections ---- */
-.section{ padding:84px 0; }
-.section.alt{ background:var(--alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+/* ---- sections: hairline + padding; the two-column grid lives in app.component.css ---- */
+.section{ padding:var(--s-section) 0; border-top:1px solid var(--line); }
 
-/* ---- cards, buttons, tags ---- */
-.card{
-  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
-  padding:22px 24px; box-shadow:var(--shadow);
-  transition:border-color .2s, box-shadow .2s;
-}
-.card:hover{ border-color:color-mix(in srgb, var(--accent) 35%, var(--line)); }
-
+/* ---- buttons: outlined ink by default; the accent fill is for the hero resume button only ---- */
 .btn{
-  display:inline-flex; align-items:center; gap:8px; padding:11px 18px; border-radius:11px;
-  border:1px solid var(--line); background:var(--surface); color:var(--ink);
-  font-weight:600; font-size:15px; line-height:1.2; cursor:pointer;
-  transition:border-color .15s, background .15s, color .15s, transform .15s, box-shadow .15s;
+  display:inline-flex; align-items:center; gap:8px; padding:9px 15px; border-radius:var(--radius);
+  border:1px solid var(--ink); background:transparent; color:var(--ink);
+  font-weight:600; font-size:var(--t-small); line-height:1.2; cursor:pointer;
+  transition:background .15s, color .15s, border-color .15s;
 }
-.btn:hover{ border-color:var(--accent); color:var(--accent); transform:translateY(-1px); }
-.btn-primary{ background:var(--grad); border-color:transparent; color:#fff; box-shadow:0 6px 18px color-mix(in srgb, var(--accent) 30%, transparent); }
-.btn-primary:hover{ color:#fff; border-color:transparent; box-shadow:0 8px 24px color-mix(in srgb, var(--accent) 40%, transparent); }
-.btn-sm{ padding:8px 14px; font-size:14px; }
-.btn-icon{ padding:11px; color:var(--ink-2); --icon:20px; }
+.btn:hover{ background:var(--ink); color:var(--bg); }
+.btn-primary{ background:var(--accent); border-color:var(--accent); color:var(--on-accent); }
+.btn-primary:hover{ background:color-mix(in srgb, var(--accent) 86%, var(--ink)); border-color:transparent; color:var(--on-accent); }
+.btn-sm{ padding:6px 12px; font-size:14px; }
 
-.tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:14px; }
-.tags li{ padding:3px 10px; border-radius:999px; background:var(--tag); color:var(--ink-2); font-size:13px; font-weight:500; }
+/* ---- text link: ink with a hairline underline; the only hover effect on the page is colour ---- */
+.link{
+  display:inline-flex; align-items:center; gap:6px; color:var(--ink); font-weight:500; font-size:var(--t-small);
+  text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:4px; text-decoration-color:var(--line);
+  --icon:16px; transition:color .15s, text-decoration-color .15s;
+}
+.link app-icon{ color:var(--muted); }
+.link:hover{ color:var(--accent); text-decoration-color:currentColor; }
+.link:hover app-icon{ color:inherit; }
 
-/* ---- scroll reveal (only once JS is running; see index.html) ---- */
-.js .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1); }
-.js .reveal.in{ opacity:1; transform:none; }
+/* ---- tags: quiet mono text separated by middle dots, no pills ---- */
+.tags{ display:flex; flex-wrap:wrap; gap:4px 0; margin-top:10px; font-family:var(--mono); font-size:var(--t-meta); color:var(--muted); }
+.tags li + li::before{ content:"·"; margin:0 8px; color:var(--muted); }
 
-@media (max-width:480px){ .wrap{ padding:0 16px; } .card{ padding:18px; } }
+/* ---- mono uppercase label: group headings, glance terms ---- */
+.label{ font-family:var(--mono); font-size:var(--t-label); text-transform:uppercase; letter-spacing:var(--track-label); color:var(--muted); }
+
+/* ---- "Incoming" chip, shared by the hero glance and app-entry (cards.ts must NOT define its own) ---- */
+.soon{
+  display:inline-block; margin-left:8px; padding:1px 8px; border-radius:var(--radius-pill); vertical-align:2px;
+  background:var(--accent-soft); color:var(--accent); font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:.03em;
+}
+
+/* ---- motion: nothing is hidden by default, ever. The pre-rendered HTML is the page.
+   Deleted: .js .reveal (the old opacity:0 start), .card, .btn-icon, .section.alt, h4.
+   No element in app.component.html carries appReveal any more; this guard keeps anything that still does visible
+   even before IntersectionObserver fires (a fade on an already-visible element could only flash, so there is none). ---- */
+.reveal, .js .reveal{ opacity:1; transform:none; }
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
-  *, *::before, *::after{ animation:none !important; transition:none !important; }
-  .js .reveal{ opacity:1; transform:none; }
+  *, *::before, *::after{ transition:none !important; animation:none !important; }
 }

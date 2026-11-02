@@ -14,13 +14,13 @@ import { PROFILE } from './data';
   template: `
     <header class="nav">
       <div class="wrap row">
-        <a class="brand" href="#top"><span class="mono">AL</span>{{ name }}</a>
+        <a class="brand" href="#top">{{ name }}</a>
 
         <nav class="links" [class.open]="open()" id="nav-links" aria-label="Sections">
           @for (s of sections; track s.id) {
             <a [href]="'#' + s.id" [class.active]="active() === s.id" (click)="select(s.id)">{{ s.label }}</a>
           }
-          <a class="btn btn-primary btn-sm" [href]="resume" target="_blank" rel="noopener">Resume</a>
+          <a class="btn btn-sm" [href]="resume" target="_blank" rel="noopener">Resume</a>
         </nav>
 
         <div class="tools">
