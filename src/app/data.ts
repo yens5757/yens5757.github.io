@@ -115,8 +115,8 @@ export const PROJECTS: Project[] = [
     summary:
       'A public site comparing the fill quality and fees of 25 US brokers from the SEC Rule 605/606 reports ' +
       'they must publish. A Python ETL pipeline collects reports from ~400 broker-dealers every week ' +
-      '(GitHub Actions) and loads ~5M rows a month into DuckDB; matched-trade statistics show payment for ' +
-      'order flow does not predict fill quality. The React/TypeScript front end has 333 pre-rendered pages, ' +
+      '(GitHub Actions) and loads ~5M rows a month into DuckDB; statistical tests find no significant link between payment for ' +
+      'order flow and fill quality. The React/TypeScript front end has 333 pre-rendered pages, ' +
       'a yearly-cost calculator and side-by-side broker comparisons.',
     stats: ['25 US brokers', '~5M rows a month', '333 pre-rendered pages'],
     tags: ['Python', 'DuckDB / SQL', 'React', 'TypeScript', 'GitHub Actions'],
