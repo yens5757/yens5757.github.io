@@ -116,8 +116,8 @@ export const PROJECTS: Project[] = [
       'A public site comparing the fill quality and fees of 25 US brokers from the SEC Rule 605/606 reports ' +
       'they must publish. A Python ETL pipeline collects reports from ~400 broker-dealers every week ' +
       '(GitHub Actions) and loads ~5M rows a month into DuckDB; statistical tests find no significant link between payment for ' +
-      'order flow and fill quality. The React/TypeScript front end has 333 pre-rendered pages, ' +
-      'a yearly-cost calculator and side-by-side broker comparisons.',
+      'order flow and fill quality. The React/TypeScript front end, redesigned in Nov 2026 around one neutral ' +
+      'price scale, has 333 pre-rendered pages, a yearly-cost calculator and side-by-side broker comparisons.',
     stats: ['25 US brokers', '~5M rows a month', '333 pre-rendered pages'],
     tags: ['Python', 'DuckDB / SQL', 'React', 'TypeScript', 'GitHub Actions'],
     links: [
@@ -126,8 +126,8 @@ export const PROJECTS: Project[] = [
     ],
     image: {
       src: 'fills-and-fees.png',
-      alt: 'Fills and Fees home page: "Is your broker getting you a good price?" beside a chart of the extra ' +
-        'cost on a $10,000 trade at seven US brokers, from Fidelity at −$0.09 to eToro at $1.77.',
+      alt: 'Fills and Fees: "Is your broker getting you a good price?" beside seven US brokers on one neutral scale ' +
+        'of extra cost per $10,000 traded, from Fidelity at $0.09 below the fair price to eToro at $1.77 above it.',
     },
   },
   {

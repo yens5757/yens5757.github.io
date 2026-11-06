@@ -81,10 +81,10 @@ export const COMMITS = [
           "Led a team of 5; cut page load times ~85%", "Next.js · TypeScript · PostgreSQL · Drizzle"],
     del: [], url: "https://gitlab.com/jguu0036/fit3162-event-planner" },
 
-  { branch: "projects", hash: "d4e91c7", date: "Oct 2026", msg: "Order Flow Watch",
+  { branch: "projects", hash: "d4e91c7", date: "Oct 2026", msg: "Fills and Fees",
     add: ["Do brokers paid for order flow give worse fills? Joins SEC Rule 605 + 606 disclosures",
           "Weekly automated pipeline: Python · DuckDB/SQL · React + TypeScript · GitHub Actions"],
-    del: [], url: "https://yens5757.github.io/order-flow-watch/" },
+    del: [], url: "https://fillsandfees.com/" },
 
   { branch: "work",     hash: "a7c3d58", date: "Dec 2026", end: "Feb 2027", msg: "Incoming Strategy and Product Intern @ Jane Street",
     add: ["Hong Kong"], del: [] },
