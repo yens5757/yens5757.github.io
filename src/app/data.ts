@@ -33,14 +33,14 @@ export const PROFILE = {
   title: 'Computer Science at Monash University',
   status: 'Open to graduate opportunities',
   lead:
-    'Final-year Computer Science student at Monash University, graduating in December 2026. ' +
+    'Final-year Computer Science student at Monash University, graduating in 2027. ' +
     'Incoming Strategy and Product Intern at Jane Street in Hong Kong, previously a Software Engineer ' +
     'Intern at Culture Amp. I build data pipelines and full-stack products, and I like turning messy ' +
     'real-world data, from markets to everyday apps, into something people can use.',
   facts: [
     // No flag / id-card icon exists in IconName, so work rights share the pin with the city.
     { icon: 'pin' as IconName, text: 'Hong Kong PR · Melbourne' },
-    { icon: 'cap' as IconName, text: 'Graduating Dec 2026' },
+    { icon: 'cap' as IconName, text: 'Graduating 2027' },
     { icon: 'chat' as IconName, text: 'English · Cantonese · Mandarin' },
   ],
   email: 'chikitlee2001@gmail.com',
@@ -115,8 +115,8 @@ export const PROJECTS: Project[] = [
     summary:
       'A public site comparing the fill quality and fees of 25 US brokers from the SEC Rule 605/606 reports ' +
       'they must publish. A Python ETL pipeline collects reports from ~400 broker-dealers every week ' +
-      '(GitHub Actions) and loads ~5M rows a month into DuckDB; statistical tests find no significant link between payment for ' +
-      'order flow and fill quality. The React/TypeScript front end, redesigned in Nov 2026 around one neutral ' +
+      '(GitHub Actions) and loads ~5M rows a month into DuckDB; statistical tests of execution quality find results consistent with ' +
+      'a 2025 Journal of Finance study. The React/TypeScript front end, redesigned in Nov 2026 around one neutral ' +
       'price scale, has 333 pre-rendered pages, a yearly-cost calculator and side-by-side broker comparisons.',
     stats: ['25 US brokers', '~5M rows a month', '333 pre-rendered pages'],
     tags: ['Python', 'DuckDB / SQL', 'React', 'TypeScript', 'GitHub Actions'],
@@ -182,7 +182,7 @@ export const PROJECTS: Project[] = [
 
 export const EDUCATION: Entry[] = [
   {
-    title: 'Bachelor of Computer Science', org: 'Monash University', where: 'Melbourne', when: 'Jun 2024 – Dec 2026',
+    title: 'Bachelor of Computer Science', org: 'Monash University', where: 'Melbourne', when: '2024 – 2027',
     points: [
       'GPA 3.5 / 4.0.',
       'Transferred from Swinburne with 11 of 12 units credited.',

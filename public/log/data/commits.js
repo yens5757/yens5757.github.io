@@ -89,6 +89,6 @@ export const COMMITS = [
   { branch: "work",     hash: "a7c3d58", date: "Dec 2026", end: "Feb 2027", msg: "Incoming Strategy and Product Intern @ Jane Street",
     add: ["Hong Kong"], del: [] },
 
-  { branch: "main",    hash: "HEAD",    date: "Dec 2026", msg: "Graduating",
+  { branch: "main",    hash: "HEAD",    date: "2027", msg: "Graduating",
     add: ["open for grad role"], del: [] },
 ];
