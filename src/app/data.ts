@@ -122,7 +122,6 @@ export const PROJECTS: Project[] = [
     tags: ['Python', 'DuckDB / SQL', 'React', 'TypeScript', 'GitHub Actions'],
     links: [
       { label: 'Live site', href: 'https://fillsandfees.com/', icon: 'ext' },
-      { label: 'Code', href: 'https://github.com/yens5757/order-flow-watch', icon: 'github' },
     ],
     image: {
       src: 'fills-and-fees.png',
